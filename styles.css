@@ -1,1 +1,36 @@
+body {
+  margin: 0;
+  background-color: black;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+}
+
+#coming-soon {
+  font-family: 'Honk', cursive;
+  font-size: 10rem;
+  color: white;
+  animation: pulse 2s infinite;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+}
 
