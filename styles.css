@@ -1,5 +1,7 @@
+/* Reset & layout */
 body {
   margin: 0;
+  padding: 0;
   background-color: black;
   height: 100vh;
   display: flex;
@@ -7,13 +9,15 @@ body {
   justify-content: center;
 }
 
+/* Centered container */
 .container {
   text-align: center;
 }
 
+/* Coming Soon text */
 #coming-soon {
-  font-family: 'Honk', cursive;
-  font-size: 10rem;
+  font-family: 'Russo One', sans-serif;
+  font-size: 8rem;
   color: white;
   animation: pulse 2s infinite;
 }
@@ -33,4 +37,3 @@ body {
     opacity: 0.7;
   }
 }
-
