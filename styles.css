@@ -16,7 +16,6 @@ body {
 
 /* Coming Soon text */
 #coming-soon {
-  font-family: 'Russo One', sans-serif;
   font-size: 8rem;
   color: white;
   animation: pulse 2s infinite;
