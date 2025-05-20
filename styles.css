@@ -1,5 +1,6 @@
 /* Reset & layout */
 body {
+  font-family: "Times New Roman", Times, serif !important;
   margin: 0;
   padding: 0;
   background-color: black;
@@ -16,6 +17,7 @@ body {
 
 /* Coming Soon text */
 #coming-soon {
+  font-family: "Times New Roman", Times, serif !important;
   font-size: 8rem;
   color: white;
   animation: pulse 2s infinite;
