@@ -47,3 +47,14 @@ body {
     0 0 15px white;
   transform: translateY(-3px);
 }
+
+.site-footer {
+  font-family: 'UnifrakturCook', cursive;
+  color: lightgrey;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  font-size: 1.2rem;
+}
