@@ -35,7 +35,7 @@ body {
   width: 110%;
   height: 110%;
   object-fit: cover;
-  transform: translateX(1%); /* slightly to the right */
+  transform: translateX(0.1%); /* slightly to the right */
   z-index: 0;
 }
 
