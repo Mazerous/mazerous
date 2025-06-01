@@ -19,7 +19,7 @@ body {
   z-index: 2000;
 }
 
-/* Square box */
+/* Square box layout fix */
 .enter-box {
   width: 80vmin;
   height: 80vmin;
@@ -30,17 +30,18 @@ body {
   align-items: center;
   padding: 20px;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
-/* Image */
+/* Image styling fix */
 .enter-image {
-  width: 80%;
-  height: auto;
+  max-height: 60%;
+  max-width: 100%;
   object-fit: contain;
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-/* Button */
+/* Button placement fix */
 .enter-button {
   font-family: 'UnifrakturCook', cursive;
   color: lightgrey;
@@ -50,6 +51,7 @@ body {
   font-size: 1.8rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  z-index: 1;
 }
 
 .enter-button:hover {
