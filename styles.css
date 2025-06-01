@@ -5,6 +5,63 @@ body {
   font-family: 'UnifrakturCook', cursive;
 }
 
+/* Fullscreen overlay */
+#enter-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* Square box */
+.enter-box {
+  width: 80vmin;
+  height: 80vmin;
+  border: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Image */
+.enter-image {
+  width: 80%;
+  height: auto;
+  object-fit: contain;
+  margin-top: 20px;
+}
+
+/* Button */
+.enter-button {
+  font-family: 'UnifrakturCook', cursive;
+  color: lightgrey;
+  background: none;
+  border: 2px solid white;
+  padding: 10px 30px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.enter-button:hover {
+  color: white;
+  text-shadow:
+    0 0 5px white,
+    0 0 10px white,
+    0 0 15px white;
+  transform: scale(1.15);
+  animation: float 2s ease-in-out infinite;
+}
+
 /* Navbar container */
 .navbar {
   position: fixed;
