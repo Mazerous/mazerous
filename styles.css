@@ -70,18 +70,39 @@ body {
   animation: float 2s ease-in-out infinite;
 }
 
-/* Navbar container */
 .navbar {
   position: fixed;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
   border: 2px solid white;
-  border-radius: 0px;
+  border-radius: 0;
   padding: 20px 40px;
   background-color: transparent;
   z-index: 1000;
   backdrop-filter: blur(5px);
+  position: relative; /* required for pseudo-element positioning */
+  overflow: hidden;   /* clip animated border inside */
+}
+
+.navbar::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  border: 2px solid black;
+  box-sizing: border-box;
+  pointer-events: none;
+  animation: pulse-border 4s linear infinite;
+  clip-path: polygon(
+    0% 0%, 100% 0%, 100% 100%, 0% 100%,
+    0% 0%
+  );
+  mask-image: linear-gradient(to right, black 0%, transparent 60%);
+  mask-size: 200% 200%;
+  mask-repeat: no-repeat;
 }
 
 /* Nav list */
@@ -93,6 +114,8 @@ body {
   margin: 0;
   padding: 0;
 }
+
+
 
 /* Nav links */
 .nav-list a {
@@ -118,6 +141,17 @@ body {
   0%   { transform: scale(1.15) translateY(0px); }
   50%  { transform: scale(1.15) translateY(-5px); }
   100% { transform: scale(1.15) translateY(0px); }
+}
+
+@keyframes pulse-border {
+  0% {
+    transform: translate(0%, 0%);
+    mask-position: 0% 0%;
+  }
+  100% {
+    transform: translate(0%, 0%);
+    mask-position: 200% 200%;
+  }
 }
 
 .main-content {
