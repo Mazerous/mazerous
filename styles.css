@@ -1,40 +1,49 @@
-/* Reset & layout */
+/* Base styles */
 body {
-  font-family: "Times New Roman", Times, serif !important;
+  margin: 0;
+  background-color: black;
+  font-family: 'UnifrakturCook', cursive;
+}
+
+/* Navbar container */
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  background-color: transparent;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+/* Nav list */
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
   margin: 0;
   padding: 0;
-  background-color: black;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-/* Centered container */
-.container {
-  text-align: center;
+/* Nav links */
+.nav-list a {
+  text-decoration: none;
+  color: lightgrey;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
-/* Coming Soon text */
-#coming-soon {
-  font-family: "Times New Roman", Times, serif !important;
-  font-size: 8rem;
+/* Hover effects */
+.nav-list a:hover {
   color: white;
-  animation: pulse 2s infinite;
-}
-
-/* Pulse animation */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.7;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.7;
-  }
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px white, 0 0 20px white;
+  transform: translateY(-3px);
 }
