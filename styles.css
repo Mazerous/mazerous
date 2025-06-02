@@ -206,24 +206,29 @@ body {
   display: flex;
   justify-content: center;
   margin: 100px auto;
+  width: 100%;
 }
 
 .twitch-container {
   display: flex;
   border: 2px solid white;
+  padding: 0;
+  width: fit-content;
   max-width: 100%;
-  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .twitch-stream {
   width: 800px;
   height: 450px;
-  border-right: 2px solid white;
+  border: none;
 }
 
 .twitch-chat {
   width: 350px;
   height: 450px;
+  border-left: 2px solid white;
 }
+
 
 
