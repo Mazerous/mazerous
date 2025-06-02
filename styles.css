@@ -31,7 +31,6 @@ body {
 .enter-image {
   position: absolute;
   top: 0;
-  left: 50%;
   width: 110%;
   height: 110%;
   transform: translateX(0%);
