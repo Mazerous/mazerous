@@ -29,7 +29,6 @@ body {
 }
 
 .enter-image {
-  padding-right: 50px;
   width: 110%;
   height: 110%;
   object-fit: cover;
