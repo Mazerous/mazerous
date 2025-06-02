@@ -29,12 +29,8 @@ body {
 }
 
 .enter-image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
   width: 110%;
   height: 110%;
-  transform: translate(-50%, -50%);
   object-fit: cover;
   z-index: 0;
   animation: pulse-box 3s ease-in-out infinite;
