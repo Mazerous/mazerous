@@ -29,11 +29,8 @@ body {
 }
 
 .enter-image {
-  width: 110%;
-  height: 110%;
   object-fit: cover;
   z-index: 0;
-  animation: pulse-box 3s ease-in-out infinite;
 }
 
 /* Enter Now Button */
