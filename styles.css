@@ -203,19 +203,20 @@ body {
 }
 
 .twitch-section {
-  display: flex;
-  justify-content: center;
-  margin: 100px auto;
   width: 100%;
+  padding: 50px 0;
 }
 
 .twitch-container {
   display: flex;
   border: 2px solid white;
-  padding: 0;
   width: fit-content;
   max-width: 100%;
   box-sizing: border-box;
+
+  /* ✅ Add these lines */
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .twitch-stream {
