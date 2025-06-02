@@ -31,7 +31,7 @@ body {
 .enter-image {
   position: absolute;
   top: 0;
-  left: 50%
+  left: 25%
   width: 110%;
   height: 110%;
   object-fit: cover;
