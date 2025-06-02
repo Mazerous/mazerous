@@ -33,7 +33,7 @@ body {
   top: 0;
   width: 110%;
   height: 110%;
-  transform: translateX(-5%);
+  transform: translateX(-50%);
   object-fit: cover;
   z-index: 0;
   animation: pulse-box 3s ease-in-out infinite;
