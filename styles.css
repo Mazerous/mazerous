@@ -116,15 +116,23 @@ body {
   100% { transform: scale(1.15) translateY(0px); }
 }
 
-@keyframes pulse-box {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.02);
-    opacity: 0.95;
-  }
+.refresh-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 1001; /* make sure it's above other content */
+}
+
+.refresh-button:hover {
+  transform: rotate(360deg);
 }
 
 .main-content {
