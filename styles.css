@@ -149,7 +149,7 @@ body {
   left: 10px;
   width: 60px;
   height: 60px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   background-color: black;
@@ -166,6 +166,10 @@ body {
   color: white;
   text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
   transform: scale(1.15);
+}
+
+#hamburger.show-hamburger {
+  display: flex;
 }
 
 /* Hide hamburger if navbar is visible */
@@ -244,7 +248,7 @@ body {
 @media (max-width: 768px) {
   .nav-list {
     flex-direction: column;
-    gap: 20px;
+    gap: 20px;https://www.twitch.tv/emiru
   }
   .nav-list a {
     font-size: 1.5rem;
@@ -300,3 +304,4 @@ body {
   align-self: flex-start;
   margin-left: calc((100vw - 1150px) / 2);
 }
+
