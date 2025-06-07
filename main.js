@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const enterPanel = document.getElementById("enter-panel");
   const navToggle = document.getElementById("nav-toggle");
   const navbar = document.querySelector(".navbar");
-  const logoToggle = document.getElementById("logo-toggle");
+  const logoToggle = document.getElementById("nav-logo");
 
   // Hide enter panel on click
   enterButton.addEventListener("click", () => {
@@ -27,6 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
     logoToggle.classList.remove("show");
     setTimeout(() => {
       navbar.classList.remove("collapsed");
-    }, 100); // Start expanding navbar right after logo fade begins
+    }, 100); // Start expanding navbar shortly after logo fade starts
   });
 });
