@@ -238,6 +238,43 @@ body {
   margin: 0 10px;
 }
 
+.layout-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.side-image {
+  position: fixed;
+  top: 0;
+  width: 25vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.left-side {
+  left: 0;
+  background-image: url('left-image.jpg'); /* Replace with actual file */
+}
+
+.right-side {
+  right: 0;
+  background-image: url('right-image.jpg'); /* Replace with actual file */
+}
+
+.main-scrollable-content {
+  margin-left: 25vw;
+  margin-right: 25vw;
+  width: 50vw;
+  height: 100vh;
+  overflow-y: auto;
+  position: relative;
+  z-index: 1;
+  background-color: black;
+}
+
 /* Main content */
 .main-content {
   font-family: 'UnifrakturCook', cursive;
