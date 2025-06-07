@@ -86,10 +86,12 @@ body {
   backdrop-filter: blur(5px);
   padding: 10px 20px;
   border-radius: 5px;
+  transform: translateX(0);
+  transition: transform 0.4s ease-in-out;
 }
 
 .navbar.collapsed {
-  display: none;
+  transform: translateX(-100vw);
 }
 
 .nav-list {
@@ -143,10 +145,23 @@ body {
   transform: scale(1.15);
 }
 
+#nav-toggle {
+  margin-left: 10px;
+  margin-right: auto;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: lightgrey;
+  cursor: pointer;
+}
+
 #hamburger {
   position: fixed;
   top: 10px;
   left: 10px;
+  width: auto;
+  height: auto;
+  padding: 10px 20px;
   display: none;
   align-items: center;
   justify-content: center;
@@ -177,6 +192,7 @@ body {
 
 .refresh-button {
   display: inline-block;
+  margin-left: auto;
 }
 
 .refresh-icon {
@@ -246,7 +262,7 @@ body {
 @media (max-width: 768px) {
   .nav-list {
     flex-direction: column;
-    gap: 20px;https://www.twitch.tv/emiru
+    gap: 20px;
   }
   .nav-list a {
     font-size: 1.5rem;
