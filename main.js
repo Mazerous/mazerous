@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Collapse navbar and show hamburger after 400ms
   navToggle.addEventListener("click", () => {
     navbar.classList.add("slide-out");
+    navbar.classList.add("collapsed");
+    navbar.classList.remove("slide-out");
     setTimeout(() => {
-      navbar.classList.add("collapsed");
-      navbar.classList.remove("slide-out");
       hamburger.classList.add("show-hamburger");
     }, 1000); // Match CSS duration
   });
