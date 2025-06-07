@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Entry overlay -->
   <div id="enter-panel">
     <div class="enter-box">
       <img src="spiral.jpg" alt="Welcome Image" class="enter-image" />
@@ -23,11 +24,8 @@
     </div>
   </div>
 
-  <!-- Hamburger (shown when navbar is hidden) -->
-  <button id="hamburger" class="hamburger-box">&#9776;</button>
-
   <!-- Navbar -->
-  <nav class="navbar expanded slide-in">
+  <nav class="navbar expanded">
     <!-- Collapse button (X on the left) -->
     <button class="nav-toggle" id="nav-toggle" aria-label="Collapse navigation">✕</button>
 
@@ -50,6 +48,10 @@
     </div>
   </nav>
 
+  <!-- Hamburger icon (shown only when navbar is collapsed) -->
+  <button id="hamburger" class="hamburger-box">&#9776;</button>
+
+  <!-- Main content -->
   <main class="main-content">
     <section id="about" class="about-section">
       <h2>About Me</h2>
