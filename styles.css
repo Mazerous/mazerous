@@ -121,9 +121,17 @@ body {
 
 #nav-logo:hover {
   filter: drop-shadow(0 0 8px white) brightness(1.2);
-  transform: translateX(-50%) scale(1.05);
 }
 
+#nav-logo img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+#nav-logo:hover img {
+  transform: scale(1.05);
+}
 /* Nav Toggle (X button) */
 .nav-toggle {
   display: flex;
