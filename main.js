@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     navbar.classList.remove("slide-out");
     setTimeout(() => {
       hamburger.classList.add("show-hamburger");
-    }, 1000); // Match CSS duration
+    }, 500); // Match CSS duration
   });
 
   // Expand navbar and hide hamburger before showing
@@ -31,6 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
     navbar.classList.add("slide-in");
     setTimeout(() => {
       navbar.classList.remove("slide-in");
-    }, 400); // Match CSS duration
+    }, 800); // Match CSS duration
   });
 });
