@@ -208,6 +208,20 @@ body {
   100% { transform: rotate(360deg); }
 }
 
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav-divider {
+  flex: 1;
+  height: 2px;
+  background-color: white;
+  margin: 0 10px;
+}
+
 /* Main content */
 .main-content {
   font-family: 'UnifrakturCook', cursive;
