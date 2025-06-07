@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const enterPanel = document.getElementById("enter-panel");
   const navToggle = document.getElementById("nav-toggle");
   const navbar = document.querySelector(".navbar");
-  const hamburger = document.getElementById("hamburger");
+  const logoToggle = document.getElementById("logo-toggle");
 
   // Hide enter panel on click
   enterButton.addEventListener("click", () => {
@@ -14,23 +14,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 600);
   });
 
-  // Collapse navbar and show hamburger after 400ms
+  // Collapse navbar and fade in logo toggle
   navToggle.addEventListener("click", () => {
-    navbar.classList.add("slide-out");
     navbar.classList.add("collapsed");
-    navbar.classList.remove("slide-out");
     setTimeout(() => {
-      hamburger.classList.add("show-hamburger");
-    }, 500); // Match CSS duration
+      logoToggle.classList.add("show");
+    }, 600); // Wait for navbar collapse to finish
   });
 
-  // Expand navbar and hide hamburger before showing
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.remove("show-hamburger");
-    navbar.classList.remove("collapsed");
-    navbar.classList.add("slide-in");
+  // Expand navbar and fade out logo toggle
+  logoToggle.addEventListener("click", () => {
+    logoToggle.classList.remove("show");
     setTimeout(() => {
-      navbar.classList.remove("slide-in");
-    }, 800); // Match CSS duration
+      navbar.classList.remove("collapsed");
+    }, 100); // Start expanding navbar right after logo fade begins
   });
 });
