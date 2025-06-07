@@ -14,15 +14,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 600);
   });
 
-  // Collapse navbar on arrow click
+  // Collapse navbar and show hamburger
   navToggle.addEventListener("click", () => {
     navbar.classList.add("collapsed");
-    hamburger.classList.add("visible");
+    hamburger.classList.add("show-hamburger");
   });
 
-  // Expand navbar on hamburger click
+  // Expand navbar and hide hamburger
   hamburger.addEventListener("click", () => {
     navbar.classList.remove("collapsed");
-    hamburger.classList.remove("visible");
+    hamburger.classList.remove("show-hamburger");
   });
 });
