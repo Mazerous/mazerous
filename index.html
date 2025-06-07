@@ -14,7 +14,6 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Entry overlay -->
   <div id="enter-panel">
     <div class="enter-box">
       <img src="spiral.jpg" alt="Welcome Image" class="enter-image" />
@@ -24,34 +23,42 @@
     </div>
   </div>
 
+  <!-- Hamburger (shown when navbar is hidden) -->
+  <button id="hamburger" class="hamburger-box">&#9776;</button>
+
   <!-- Navbar -->
-  <nav class="navbar expanded">
-    <!-- Collapse button (X on the left) -->
-    <button class="nav-toggle" id="nav-toggle" aria-label="Collapse navigation">✕</button>
+  <nav class="navbar expanded slide-in">
+    <div class="nav-inner">
+      <!-- Collapse button (X on the left) -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Collapse navigation">✕</button>
 
-    <!-- Navigation links -->
-    <ul class="nav-list">
-      <li><a href="home.html">Home</a></li>
-      <li><a href="software.html">Software</a></li>
-      <li><a href="gaming.html">Gaming</a></li>
-      <li><a href="fitness.html">Fitness</a></li>
-      <li><a href="tattoos.html">Tattoos</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="comments.html">Comments</a></li>
-    </ul>
+      <!-- Divider -->
+      <div class="nav-divider"></div>
 
-    <!-- Refresh button (on right) -->
-    <div class="refresh-nav-item">
-      <a href="index.html" class="refresh-button">
-        <img src="sawblade copy.png" alt="Refresh" class="refresh-icon">
-      </a>
+      <!-- Navigation links -->
+      <ul class="nav-list">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="software.html">Software</a></li>
+        <li><a href="gaming.html">Gaming</a></li>
+        <li><a href="fitness.html">Fitness</a></li>
+        <li><a href="tattoos.html">Tattoos</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="comments.html">Comments</a></li>
+      </ul>
+
+      <!-- Divider -->
+      <div class="nav-divider"></div>
+
+      <!-- Refresh button (on right) -->
+      <div class="refresh-nav-item">
+        <a href="index.html" class="refresh-button">
+          <img src="sawblade copy.png" alt="Refresh" class="refresh-icon">
+        </a>
+      </div>
     </div>
   </nav>
 
-  <!-- Hamburger icon (shown only when navbar is collapsed) -->
-  <button id="hamburger" class="hamburger-box">&#9776;</button>
-
-  <!-- Main content -->
   <main class="main-content">
     <section id="about" class="about-section">
       <h2>About Me</h2>
@@ -66,3 +73,4 @@
   <script src="main.js"></script>
 </body>
 </html>
+
