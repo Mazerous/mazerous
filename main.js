@@ -12,18 +12,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Navbar toggle functionality
-  const collapseBtn = document.querySelector(".collapse-button");
-  const hamburgerBtn = document.querySelector(".hamburger-button");
-  const navList = document.querySelector(".nav-list");
+  const navToggle = document.getElementById("nav-toggle");
   const navbar = document.querySelector(".navbar");
 
-  if (collapseBtn && hamburgerBtn && navList && navbar) {
-    collapseBtn.addEventListener("click", () => {
-      navbar.classList.add("collapsed");
-    });
-
-    hamburgerBtn.addEventListener("click", () => {
-      navbar.classList.remove("collapsed");
+  if (navToggle && navbar) {
+    navToggle.addEventListener("click", () => {
+      navbar.classList.toggle("collapsed");
     });
   }
 });
