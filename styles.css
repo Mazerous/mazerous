@@ -99,7 +99,7 @@ body {
   transform-origin: center;
 }
 
-#logo-toggle {
+#nav-logo {
   position: fixed;
   top: 10px;
   left: 50%;
@@ -113,13 +113,13 @@ body {
   transition: opacity 0.6s ease;
 }
 
-#logo-toggle.show {
+#nav-logo.show {
   display: block;
   opacity: 1;
   transition: opacity 0.6s ease;
 }
 
-#logo-toggle:hover {
+#nav-logo:hover {
   filter: drop-shadow(0 0 8px white) brightness(1.2);
   transform: translateX(-50%) scale(1.05);
 }
