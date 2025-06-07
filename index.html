@@ -23,9 +23,15 @@
     </div>
   </div>
 
+  <!-- Hamburger (shown when navbar is hidden) -->
   <button id="hamburger" class="hamburger-box">&#9776;</button>
 
-  <nav class="navbar expanded">
+  <!-- Navbar -->
+  <nav class="navbar expanded slide-in">
+    <!-- Collapse button (X on the left) -->
+    <button class="nav-toggle" id="nav-toggle" aria-label="Collapse navigation">✕</button>
+
+    <!-- Navigation links -->
     <ul class="nav-list">
       <li><a href="home.html">Home</a></li>
       <li><a href="software.html">Software</a></li>
@@ -34,13 +40,14 @@
       <li><a href="tattoos.html">Tattoos</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="comments.html">Comments</a></li>
-      <li class="refresh-nav-item">
-        <a href="index.html" class="refresh-button">
-          <img src="sawblade copy.png" alt="Refresh" class="refresh-icon">
-        </a>
-      </li>
     </ul>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">&#x25C0;</button>
+
+    <!-- Refresh button (on right) -->
+    <div class="refresh-nav-item">
+      <a href="index.html" class="refresh-button">
+        <img src="sawblade copy.png" alt="Refresh" class="refresh-icon">
+      </a>
+    </div>
   </nav>
 
   <main class="main-content">
