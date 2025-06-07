@@ -87,7 +87,7 @@ body {
   padding: 0 10px;
   border-radius: 0;
   transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
-  height: 60px;
+  height: 5vh;
 }
 
 .navbar.collapsed {
@@ -101,8 +101,8 @@ body {
   position: fixed;
   top: 10px;
   left: 10px;
-  height: 60px;
-  width: 60px;
+  height: 5vh;
+  width: 5vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -117,6 +117,7 @@ body {
   opacity: 0;
   visibility: hidden;
   border-radius: 0;
+  aspect-ratio: 1 / 1;
   padding: 0;
 }
 
@@ -134,19 +135,18 @@ body {
 
 /* Nav Toggle (X button) */
 .nav-toggle {
-  width: 60px;
-  height: 60px;
-  border: none;
-  background: transparent;
-  color: lightgrey;
-  font-size: 2rem;
-  font-family: 'UnifrakturCook', cursive;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-left: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  margin: 0 10px;
+  background: transparent;
+  border: none;
+  color: lightgrey;
+  font-size: 2rem;
+  cursor: pointer;
   z-index: 1001;
 }
 
@@ -190,21 +190,25 @@ body {
 }
 
 .refresh-button {
-  display: inline-block;
-}
-
-.refresh-nav-item {
-  width: 60px;
-  height: 60px;
-  margin-right: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  margin: 0 10px;
+  background: transparent;
+  border: none;
+  color: lightgrey;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 .refresh-icon {
-  width: 100%;
-  height: 100%;
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin: auto;
   filter: brightness(0.7);
   transition: all 0.4s ease;
 }
@@ -344,4 +348,5 @@ body {
   align-self: flex-start;
   margin-left: calc((100vw - 1150px) / 2);
 }
+
 
