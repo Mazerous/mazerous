@@ -153,10 +153,7 @@ body {
   left: 10px;
   height: 5vh;
   width: 5vh;
-  padding: 10px 10px;
   display: none;
-  align-items: center;
-  justify-content: flex-start;
   background-color: black;
   border: 2px solid white;
   color: lightgrey;
@@ -165,7 +162,13 @@ body {
   z-index: 1002;
   cursor: pointer;
   transition: all 0.3s ease;
-  border-radius: 0px;
+  border-radius: 0;
+  aspect-ratio: 1 / 1;
+
+  display: flex;              /* Ensure Flexbox is active */
+  align-items: center;        /* Vertically center */
+  justify-content: center;    /* Horizontally center */
+  padding: 0;                 /* Remove internal padding */
 }
 
 #hamburger:hover {
