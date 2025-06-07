@@ -25,4 +25,16 @@ document.addEventListener("DOMContentLoaded", function () {
     navbar.classList.remove("collapsed");
     hamburger.classList.remove("show-hamburger");
   });
+
+  // Match hamburger height and width to navbar dynamically
+  function matchHamburgerSize() {
+    if (navbar && hamburger) {
+      const navbarHeight = window.getComputedStyle(navbar).height;
+      hamburger.style.height = navbarHeight;
+      hamburger.style.width = navbarHeight; // make it a square
+    }
+  }
+
+  matchHamburgerSize(); // run on load
+  window.addEventListener("resize", matchHamburgerSize); // run on resize
 });
