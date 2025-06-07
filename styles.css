@@ -88,49 +88,40 @@ body {
   border-radius: 0;
   transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
   height: 5vh;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  transform-origin: center;
 }
 
 .navbar.collapsed {
-  transform: translateX(-100%);
+  transform: scaleX(0);
   opacity: 0;
   pointer-events: none;
+  transform-origin: center;
 }
 
-/* Hamburger */
-#hamburger {
+#logo-toggle {
   position: fixed;
   top: 10px;
-  left: 10px;
-  height: 5vh;
-  width: 5vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: black;
-  border: 2px solid white;
-  color: lightgrey;
-  font-size: 2rem;
-  font-family: 'UnifrakturCook', cursive;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: auto;
+  display: none;
+  opacity: 0;
   z-index: 999;
   cursor: pointer;
-  transition: opacity 0.3s ease 0.4s, visibility 0s linear 0.4s;
-  opacity: 0;
-  visibility: hidden;
-  border-radius: 0;
-  aspect-ratio: 1 / 1;
-  padding: 0;
+  transition: opacity 0.6s ease;
 }
 
-#hamburger.show-hamburger {
+#logo-toggle.show {
+  display: block;
   opacity: 1;
-  visibility: visible;
-  transition: opacity 0.3s ease 0.4s, visibility 0s linear 0.4s;
+  transition: opacity 0.6s ease;
 }
 
-#hamburger:hover {
-  color: white;
-  text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
-  transform: scale(1.15);
+#logo-toggle:hover {
+  filter: drop-shadow(0 0 8px white) brightness(1.2);
+  transform: translateX(-50%) scale(1.05);
 }
 
 /* Nav Toggle (X button) */
