@@ -257,12 +257,12 @@ body {
 
 .left-side {
   left: 0;
-  background-image: url('left-image.jpg'); /* Replace with actual file */
+  background-image: url('mazerous website left.png'); /* Replace with actual file */
 }
 
 .right-side {
   right: 0;
-  background-image: url('right-image.jpg'); /* Replace with actual file */
+  background-image: url('mazerous website right.png'); /* Replace with actual file */
 }
 
 .main-scrollable-content {
