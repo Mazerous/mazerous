@@ -84,8 +84,8 @@ body {
   border: 2px solid white;
   z-index: 1000;
   backdrop-filter: blur(5px);
-  padding: 10px 10px;
-  border-radius: 0px;
+  padding: 0 10px;
+  border-radius: 0;
   transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
   height: 5vh;
 }
@@ -94,6 +94,63 @@ body {
   transform: translateX(-100%);
   opacity: 0;
   pointer-events: none;
+}
+
+/* Hamburger */
+#hamburger {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  height: 5vh;
+  width: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  border: 2px solid white;
+  color: lightgrey;
+  font-size: 2rem;
+  font-family: 'UnifrakturCook', cursive;
+  z-index: 999;
+  cursor: pointer;
+  transition: opacity 0.3s ease 0.4s, visibility 0s linear 0.4s;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 0;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+}
+
+#hamburger.show-hamburger {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease 0.4s, visibility 0s linear 0.4s;
+}
+
+#hamburger:hover {
+  color: white;
+  text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
+  transform: scale(1.15);
+}
+
+/* Nav Toggle (X button) */
+.nav-toggle {
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: transparent;
+  color: lightgrey;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+  z-index: 1001;
+}
+
+.nav-toggle:hover {
+  color: white;
+  text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
+  transform: scale(1.15);
 }
 
 .nav-list {
@@ -129,62 +186,6 @@ body {
   100% { transform: scale(1.15) translateY(0px); }
 }
 
-.nav-toggle {
-  cursor: pointer;
-  width: 48px;
-  height: 48px;
-  border: none;
-  background: transparent;
-  color: lightgrey;
-  font-size: 2rem;
-  transition: all 0.3s ease;
-  margin-right: 10px;
-}
-
-.nav-toggle:hover {
-  color: white;
-  text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
-  transform: scale(1.15);
-}
-
-#hamburger {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  height: 5vh;
-  width: 5vh;
-  display: none;
-  background-color: black;
-  border: 2px solid white;
-  color: lightgrey;
-  font-size: 2rem;
-  font-family: 'UnifrakturCook', cursive;
-  z-index: 1002;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border-radius: 0;
-  aspect-ratio: 1 / 1;
-
-  display: flex;              /* Ensure Flexbox is active */
-  align-items: center;        /* Vertically center */
-  justify-content: center;    /* Horizontally center */
-  padding: 0;                 /* Remove internal padding */
-}
-
-#hamburger:hover {
-  color: white;
-  text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
-  transform: scale(1.15);
-}
-
-#hamburger.show-hamburger {
-  display: flex;
-}
-
-.navbar:not(.collapsed) + #hamburger {
-  display: none !important;
-}
-
 .refresh-button {
   display: inline-block;
 }
@@ -207,6 +208,7 @@ body {
   100% { transform: rotate(360deg); }
 }
 
+/* Main content */
 .main-content {
   font-family: 'UnifrakturCook', cursive;
   color: lightgrey;
@@ -258,21 +260,25 @@ body {
     flex-direction: column;
     gap: 20px;
   }
+
   .nav-list a {
     font-size: 1.5rem;
   }
+
   .main-content {
     width: 90%;
     padding-top: 120px;
     padding-bottom: 100px;
     font-size: 1rem;
   }
+
   .site-footer {
     font-size: 1rem;
     padding: 15px 10px;
   }
 }
 
+/* Twitch Section */
 .twitch-section {
   width: 100%;
   padding: 50px 0;
@@ -312,4 +318,3 @@ body {
   align-self: flex-start;
   margin-left: calc((100vw - 1150px) / 2);
 }
-
