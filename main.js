@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
       navbar.classList.add("collapsed");
       navbar.classList.remove("slide-out");
       hamburger.classList.add("show-hamburger");
-    }, 300); // Match CSS animation duration
+    }, 1000); // Match CSS animation duration
   });
 
   // Expand navbar and hide hamburger before animation
