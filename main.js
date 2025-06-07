@@ -16,13 +16,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Collapse navbar on arrow click
   navToggle.addEventListener("click", () => {
-    navbar.style.display = "none";
-    hamburger.style.display = "block";
+    navbar.classList.add("collapsed");
+    hamburger.classList.add("visible");
   });
 
   // Expand navbar on hamburger click
   hamburger.addEventListener("click", () => {
-    navbar.style.display = "flex";
-    hamburger.style.display = "none";
+    navbar.classList.remove("collapsed");
+    hamburger.classList.remove("visible");
   });
 });
