@@ -14,23 +14,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 600);
   });
 
-  // Collapse navbar and show hamburger after animation
+  // Collapse navbar and show hamburger after 400ms
   navToggle.addEventListener("click", () => {
     navbar.classList.add("slide-out");
     setTimeout(() => {
       navbar.classList.add("collapsed");
       navbar.classList.remove("slide-out");
       hamburger.classList.add("show-hamburger");
-    }, 1000); // Match CSS animation duration
+    }, 1000); // Match CSS duration
   });
 
-  // Expand navbar and hide hamburger before animation
+  // Expand navbar and hide hamburger before showing
   hamburger.addEventListener("click", () => {
     hamburger.classList.remove("show-hamburger");
     navbar.classList.remove("collapsed");
     navbar.classList.add("slide-in");
     setTimeout(() => {
       navbar.classList.remove("slide-in");
-    }, 300); // Match CSS animation duration
+    }, 400); // Match CSS duration
   });
 });
