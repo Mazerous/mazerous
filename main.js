@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Begin music playback and analysis
     try {
-      audio.currentTime = 20;
+      audio.currentTime = 50;
       audio.volume = 0.5;
       audio.play();
       setupAudioAnalysis();
