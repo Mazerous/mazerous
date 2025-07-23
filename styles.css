@@ -249,31 +249,6 @@ body {
   overflow: hidden;
 }
 
-#audio-controls {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3000;
-  text-align: center;
-}
-
-#toggle-audio {
-  background-color: black;
-  border: 2px solid white;
-  color: white;
-  padding: 10px 20px;
-  font-family: 'UnifrakturCook', cursive;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-#toggle-audio:hover {
-  background-color: white;
-  color: black;
-}
-
 /* Pulse animation for side panels */
 .pulse {
   animation: pulseGlow 0.2s ease;
