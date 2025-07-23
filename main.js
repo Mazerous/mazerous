@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let audioContext, analyser, source, dataArray;
   let isPlaying = false;
   let lastPulseTime = 0;
+  const pulseCooldown = 100;
 
   // Function: Setup Audio Analysis for Pulse
   function setupAudioAnalysis() {
