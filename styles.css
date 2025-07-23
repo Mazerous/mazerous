@@ -288,6 +288,28 @@ body {
   }
 }
 
+.audio-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-family: 'UnifrakturCook', cursive;
+  color: lightgrey;
+  background-color: black;
+  border: 2px solid white;
+  cursor: pointer;
+  z-index: 2000;
+  transition: all 0.3s ease;
+}
+
+.audio-toggle:hover {
+  color: white;
+  transform: scale(1.1);
+  text-shadow: 0 0 5px white;
+}
+
+
 .side-image {
   position: fixed;
   top: 0;
