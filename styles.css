@@ -256,7 +256,7 @@ body {
 
 @keyframes pulseGlow {
   0% {
-    filter: brightness(1.5) drop-shadow(0 0 4px white);
+    filter: brightness(1.1) drop-shadow(0 0 2px white);
   }
   100% {
     filter: brightness(1) drop-shadow(0 0 0px white);
