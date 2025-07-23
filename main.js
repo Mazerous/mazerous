@@ -27,15 +27,16 @@ document.addEventListener("DOMContentLoaded", function () {
     animatePulse();
   }
 
-  // Function: Animate Pulse Based on Bass
+  // Function: Animate Pulse Based on Low Bass
   function animatePulse() {
     requestAnimationFrame(animatePulse);
     if (!analyser) return;
 
     analyser.getByteFrequencyData(dataArray);
-    const bass = dataArray.slice(0, 10).reduce((sum, val) => sum + val, 0) / 10;
+    const lowBass = dataArray.slice(0, 5); // Focus on deep bass
+    const avg = lowBass.reduce((sum, val) => sum + val, 0) / lowBass.length;
 
-    if (bass > 90) {
+    if (avg > 140) {
       leftSide.classList.add("pulse");
       rightSide.classList.add("pulse");
       setTimeout(() => {
@@ -53,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
       enterPanel.style.display = "none";
     }, 600);
 
-    // Begin music
+    // Begin music playback and analysis
     try {
       audio.currentTime = 20;
       audio.volume = 0.5;
