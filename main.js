@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let audioContext, analyser, source, dataArray;
   let isPlaying = false;
+  let lastPulseTime = 0;
+  const pulseCooldown = 400; // milliseconds between allowed pulses
 
   // Function: Setup Audio Analysis for Pulse
   function setupAudioAnalysis() {
@@ -27,16 +29,18 @@ document.addEventListener("DOMContentLoaded", function () {
     animatePulse();
   }
 
-  // Function: Animate Pulse Based on Low Bass
+  // Function: Animate Pulse Based on Low Bass with cooldown
   function animatePulse() {
     requestAnimationFrame(animatePulse);
     if (!analyser) return;
 
     analyser.getByteFrequencyData(dataArray);
-    const lowBass = dataArray.slice(0, 5); // Focus on deep bass
+    const lowBass = dataArray.slice(0, 5); // Deep bass frequencies
     const avg = lowBass.reduce((sum, val) => sum + val, 0) / lowBass.length;
 
-    if (avg > 140) {
+    const now = performance.now();
+    if (avg > 130 && now - lastPulseTime > pulseCooldown) {
+      lastPulseTime = now;
       leftSide.classList.add("pulse");
       rightSide.classList.add("pulse");
       setTimeout(() => {
@@ -96,5 +100,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
-
