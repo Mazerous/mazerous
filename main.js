@@ -14,19 +14,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 600);
   });
 
-  // Collapse navbar and fade in logo toggle
+  // Hide navbar (fade out) and show logo (fade in)
   navToggle.addEventListener("click", () => {
-    navbar.classList.add("collapsed");
+    navbar.classList.add("hidden");
     setTimeout(() => {
       logoToggle.classList.add("show");
-    }, 600); // Wait for navbar collapse to finish
+    }, 400); // Match CSS transition duration
   });
 
-  // Expand navbar and fade out logo toggle
+  // Show navbar (fade in) and hide logo (fade out)
   logoToggle.addEventListener("click", () => {
     logoToggle.classList.remove("show");
     setTimeout(() => {
-      navbar.classList.remove("collapsed");
-    }, 100); // Start expanding navbar shortly after logo fade starts
+      navbar.classList.remove("hidden");
+    }, 100); // Small delay for smooth transition
   });
 });
