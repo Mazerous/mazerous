@@ -10,55 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const rightSide = document.querySelector('.right-side');
 
   let audioContext, analyser, source, dataArray;
-  let isPlaying = true;
+  let isPlaying = false;
 
-  // Hide enter panel
-  enterButton.addEventListener("click", () => {
-    enterPanel.style.opacity = "0";
-    enterPanel.style.transition = "opacity 0.6s ease";
-    setTimeout(() => {
-      enterPanel.style.display = "none";
-    }, 600);
-  });
-
-  // Navbar collapse/expand logic
-  navToggle.addEventListener("click", () => {
-    navbar.classList.add("collapsed");
-    setTimeout(() => {
-      logoToggle.classList.add("show-logo");
-    }, 600);
-  });
-
-  logoToggle.addEventListener("click", () => {
-    logoToggle.classList.remove("show-logo");
-    setTimeout(() => {
-      navbar.classList.remove("collapsed");
-    }, 100);
-  });
-
-  // Setup and play audio from 16s on page load
-  audio.currentTime = 16;
-  audio.volume = 0.5;
-  audio.play().then(() => {
-    setupAudioAnalysis();
-  }).catch(e => {
-    console.log("Autoplay blocked. User must interact to start audio.");
-  });
-
-  // Toggle audio on button click
-  toggleAudioBtn.addEventListener("click", () => {
-    if (audio.paused) {
-      audio.play();
-      toggleAudioBtn.textContent = "Pause Music";
-      isPlaying = true;
-    } else {
-      audio.pause();
-      toggleAudioBtn.textContent = "Play Music";
-      isPlaying = false;
-    }
-  });
-
-  // Audio analysis for pulse effect
+  // Function: Setup Audio Analysis for Pulse
   function setupAudioAnalysis() {
     audioContext = new (window.AudioContext || window.webkitAudioContext)();
     source = audioContext.createMediaElementSource(audio);
@@ -73,14 +27,15 @@ document.addEventListener("DOMContentLoaded", function () {
     animatePulse();
   }
 
+  // Function: Animate Pulse Based on Bass
   function animatePulse() {
     requestAnimationFrame(animatePulse);
     if (!analyser) return;
 
     analyser.getByteFrequencyData(dataArray);
-    let bass = dataArray.slice(0, 10).reduce((sum, val) => sum + val, 0) / 10;
+    const bass = dataArray.slice(0, 10).reduce((sum, val) => sum + val, 0) / 10;
 
-    if (bass > 100) {
+    if (bass > 90) {
       leftSide.classList.add("pulse");
       rightSide.classList.add("pulse");
       setTimeout(() => {
@@ -89,5 +44,56 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 100);
     }
   }
+
+  // Event: Enter Button
+  enterButton.addEventListener("click", () => {
+    enterPanel.style.opacity = "0";
+    enterPanel.style.transition = "opacity 0.6s ease";
+    setTimeout(() => {
+      enterPanel.style.display = "none";
+    }, 600);
+
+    // Begin music
+    try {
+      audio.currentTime = 16;
+      audio.volume = 0.5;
+      audio.play();
+      setupAudioAnalysis();
+      toggleAudioBtn.textContent = "Pause Music";
+      isPlaying = true;
+    } catch (err) {
+      console.log("Autoplay prevented until user interacts.");
+    }
+  });
+
+  // Navbar collapse and logo show
+  navToggle.addEventListener("click", () => {
+    navbar.classList.add("collapsed");
+    setTimeout(() => {
+      logoToggle.classList.add("show-logo");
+    }, 600);
+  });
+
+  // Navbar expand and logo hide
+  logoToggle.addEventListener("click", () => {
+    logoToggle.classList.remove("show-logo");
+    setTimeout(() => {
+      navbar.classList.remove("collapsed");
+    }, 100);
+  });
+
+  // Toggle audio button (bottom right)
+  toggleAudioBtn.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      toggleAudioBtn.textContent = "Pause Music";
+      isPlaying = true;
+    } else {
+      audio.pause();
+      toggleAudioBtn.textContent = "Play Music";
+      isPlaying = false;
+    }
+  });
 });
+
 
