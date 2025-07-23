@@ -30,3 +30,63 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 100); // Small delay for smooth transition
   });
 });
+
+// --- Audio Beat Pulse Setup ---
+let audio = new Audio('your-audio-file.mp3'); // Replace with your file path
+let audioContext, analyser, source, dataArray;
+let isPlaying = false;
+
+const leftSide = document.querySelector('.left-side');
+const rightSide = document.querySelector('.right-side');
+const toggleBtn = document.createElement('button');
+
+toggleBtn.textContent = "Play Music";
+toggleBtn.className = "audio-toggle";
+document.body.appendChild(toggleBtn);
+
+// Button click to play/pause music
+toggleBtn.addEventListener("click", () => {
+  if (!audioContext) setupAudioAnalysis();
+
+  if (isPlaying) {
+    audio.pause();
+    toggleBtn.textContent = "Play Music";
+  } else {
+    if (audio.currentTime < 16) {
+      audio.currentTime = 16; // Start at 16 seconds
+    }
+    audio.play();
+    toggleBtn.textContent = "Pause Music";
+  }
+
+  isPlaying = !isPlaying;
+});
+
+function setupAudioAnalysis() {
+  audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  source = audioContext.createMediaElementSource(audio);
+  analyser = audioContext.createAnalyser();
+  analyser.fftSize = 256;
+  const bufferLength = analyser.frequencyBinCount;
+  dataArray = new Uint8Array(bufferLength);
+
+  source.connect(analyser);
+  analyser.connect(audioContext.destination);
+
+  animatePulse();
+}
+
+function animatePulse() {
+  requestAnimationFrame(animatePulse);
+
+  if (!analyser) return;
+
+  analyser.getByteFrequencyData(dataArray);
+
+  let bass = dataArray.slice(0, 10).reduce((sum, val) => sum + val, 0) / 10;
+
+  let scale = 1 + bass / 255 * 0.2; // Max scale 1.2
+  leftSide.style.transform = `scale(${scale})`;
+  rightSide.style.transform = `scale(${scale})`;
+}
+
